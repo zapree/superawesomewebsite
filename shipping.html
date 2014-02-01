@@ -37,6 +37,65 @@
 				</li>
 			</ul>
 		</nav>
+		<h2>Shipping Information</h2>
+		<fieldset>
+			<legend>Shipping Information</legend>
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" /></td>
+				</tr>
+				<tr>
+					<td>Address</td>
+					<td><input type="text" /></td>
+				</tr>
+				<tr>
+					<td>City</td>
+					<td><input type="text" /></td>
+				</tr>
+				<tr>
+					<td>State</td>
+					<td>
+						<select name="state">
+							<option value="CA">CA</option>
+							<option value="AZ">AZ</option>
+							<option value="AK">AK</option>
+							<option value="CO">CO</option>
+							<option value="NV">NV</option>
+							<option value="WA">WA</option>
+							<option value="OR">OR</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="email" /></td>
+				</tr>
+				<tr>
+					<td>Phone</td>
+					<td><input type="tel" /></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><input type="radio" name="Next Day" value="nextday" id="nextday" />
+					<label for="nextday">Next Day</label></td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="Second Day" value="secondday" id="secondday" />
+					<label for="secondday">Second Day</label></td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="Ground" value="ground" id="ground" />
+					<label for="ground">Ground</label></td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" value="Submit" />
+					</td>
+				</tr>
+			</table>
+		</fieldset>
 	</body>
 	<footer> &copy; 2014 Eugene Balaguer, Parker Mathewson.  All rights reserved.</footer>
 </html>
