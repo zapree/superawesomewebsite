@@ -6,30 +6,29 @@
 		<title>Cart Dripping with Awesome</title>
 		<meta name="author" content="Eugene Balaguer, Parker Mathewson" />
 		<meta name="description" content="Our super awesome csc337 project" />
+		<link href="superawesomestyle.css" rel="stylesheet" type="text/css">
 		<!-- Date: 2014-01-29 -->
 	</head>
 
-	<body>
+	<header>
 		<h1>
 			This Is a Super Awesome Website
 		</h1>
 		<nav>
 			<ul>
-				<li> 
-					<a href="index.html">Home</a>
-				</li>
 				<li>
 					<a href="products.html">Products</a>
-					<ul>
-						<li><a href="product.html">Super Awesome Yacht Island</a></li>
-						<li><a href="">Super Awesome Shirt</a></li>
-						<li><a href="">Super Awesome Penguins</a></li>
-						<li><a href="">Super Awesome Car</a></li>
+					<ul class="productdrop">
+						<li class="productdrop"><a href="product.html">Super Awesome Yacht Island</a></li>
+						<li class="productdrop"><a href="">Super Awesome Shirt</a></li>
+						<li class="productdrop"><a href="">Super Awesome Penguins</a></li>
+						<li class="productdrop"><a href="">Super Awesome Car</a></li>
 					</ul>
 				</li>
 	
 				<li>
 					<a href="blog.html">Blog</a>
+				</li>
 				<li>
 					<a href="about.html">About</a>
 				</li>
@@ -38,6 +37,9 @@
 				</li>
 			</ul>
 		</nav>
+	</header>
+
+	<body>
 		<h2>Shopping Cart</h2>
 		<form action="shipping.html" method="post">
 			<table>

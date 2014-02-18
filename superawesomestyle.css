@@ -1,0 +1,23 @@
+/* Authors: Parker Mathewson and Eugene Balaguer */
+ul {
+	list-style: none;
+	padding: 10px;
+}
+
+li {
+	background-color: gray;
+	float: left;
+	height: 40px;
+	width: 175px;
+	padding: 5px;
+}
+
+li ul .productdrop {
+	background-color: #AAA;
+	left: -999px;
+	position: relative;
+}
+
+li:hover ul .productdrop {
+	left: -15px;
+}
