@@ -49,11 +49,13 @@ header {
 }
 
 body {
+	font-family: Georgia, Serif;
 	margin-left: auto;
 	margin-right: auto;
 	width: 960px;
 	display: block;
 }
+
 div {
 	display: block;
 }
@@ -65,7 +67,7 @@ footer {
 
 .foot {
 	color: white;
-	width: 450px;
+	width: 500px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -77,4 +79,34 @@ footer {
 
 .front {
 	width: 960px;
+}
+
+.products {
+	padding: 15px;
+	border: 1px solid black;
+	margin-right: 10px;
+}
+
+#yacht {
+	width: 207px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#car {
+	width: 144px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#penguin {
+	width: 184px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#shirt {
+	width: 155px;
+	margin-left: auto;
+	margin-right: auto;
 }
