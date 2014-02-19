@@ -1,4 +1,8 @@
 /* Authors: Parker Mathewson and Eugene Balaguer */
+#banner {
+	width: 460px;
+}
+
 nav {
 	display: block;
 	width: 960px;
