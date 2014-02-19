@@ -1,15 +1,37 @@
 /* Authors: Parker Mathewson and Eugene Balaguer */
-ul {
+nav {
+	display: block;
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.nav {
 	list-style: none;
-	padding: 10px;
+	padding: 5px;
+	background-color: gray;
+	height: 30px;
+}
+
+ul a:link {
+	text-decoration: none;
+	color: #AB3C25;
+}
+
+ul a:hover {
+	text-decoration: underline;
+}
+
+ul a:visited {
+	color: #443AAB;
 }
 
 li {
-	background-color: gray;
 	float: left;
-	height: 40px;
-	width: 175px;
+	display: inline-block;
 	padding: 5px;
+	height: 30px;
+	width: 200px;
 }
 
 li ul .productdrop {
@@ -19,5 +41,40 @@ li ul .productdrop {
 }
 
 li:hover ul .productdrop {
-	left: -15px;
+	left: -40px;
+}
+
+header {
+	display: block;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+	display: block;
+}
+div {
+	display: block;
+}
+
+footer {
+	width: 100%;
+	background-color: #000;
+}
+
+.foot {
+	color: white;
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.logo {
+	text-decoration: none;
+	color: black;
+}
+
+.front {
+	width: 960px;
 }
