@@ -8,6 +8,7 @@
 		<meta name="description" content="Our super awesome csc337 project" />
 		<link href="superawesomestyle.css" rel="stylesheet" type="text/css">
 		<!-- Date: 2014-01-29 -->
+		<!-- AUTHORS Eugene Balaguer and Parker Mathewson -->
 	</head>
 	<body>
 		<header>
@@ -42,23 +43,27 @@
 		</header>
 		<h2>Shipping Information</h2>
 		<form action="total.html" method="post">
-			<fieldset>
+			<fieldset id="shipping">
 				<legend>Shipping Information</legend>
-				<table>
+				<table class="shippingtable">
 					<tr>
 						<td>Name</td>
+						<td> </td>
 						<td><input type="text" /></td>
 					</tr>
 					<tr>
 						<td>Address</td>
+						<td> </td>
 						<td><input type="text" /></td>
 					</tr>
 					<tr>
 						<td>City</td>
+						<td> </td>
 						<td><input type="text" /></td>
 					</tr>
 					<tr>
 						<td>State</td>
+						<td> </td>
 						<td>
 							<select name="state">
 								<option value="CA">CA</option>
@@ -73,29 +78,35 @@
 					</tr>
 					<tr>
 						<td>Email</td>
+						<td> </td>
 						<td><input type="email" /></td>
 					</tr>
 					<tr>
 						<td>Phone</td>
+						<td> </td>
 						<td><input type="tel" /></td>
 					</tr>
 				</table>
-				<table>
+				<table class="shippingtable2">
 					<tr>
-						<td><input type="radio" name="Next Day" value="nextday" id="nextday" />
+						<td> </td>
+						<td><input class="shippingradio" type="radio" name="Next Day" value="nextday" id="nextday" />
 						<label for="nextday">Next Day</label></td>
 					</tr>
 					<tr>
-						<td><input type="radio" name="Second Day" value="secondday" id="secondday" />
+						<td> </td>
+						<td><input class="shippingradio" type="radio" name="Second Day" value="secondday" id="secondday" />
 						<label for="secondday">Second Day</label></td>
 					</tr>
 					<tr>
-						<td><input type="radio" name="Ground" value="ground" id="ground" />
+						<td> </td>
+						<td><input class="shippingradio" type="radio" name="Ground" value="ground" id="ground" />
 						<label for="ground">Ground</label></td>
 					</tr>
 					<tr>
+						<td> </td>
 						<td>
-							<input class="button" type="submit" value="Submit" />
+							<input id="shippingbutton" class="button" type="submit" value="Submit" />
 						</td>
 					</tr>
 				</table>

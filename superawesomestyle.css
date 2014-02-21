@@ -188,3 +188,22 @@ footer {
 .holder {
 	height: 21px;
 }
+
+#shipping {
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#shippingbutton {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.shippingtable tr td{
+	width: 70px;
+}
+
+.shippingtable2 tr td{
+	width: 110px;
+}
