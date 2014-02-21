@@ -102,10 +102,21 @@ footer {
 .yacht_and_cart {
 	float:right;
 }
-#blog_table tr{
-	padding: 50px;
-	border: 2px solid black;
+#blog_table {
+  border-collapse: collapse;
+  padding: 20px;
 }
+#blog_table tr { 
+  border: solid;
+  border-width: 1px 0;
+  
+}
+#blog_table tr:first-child{
+	border-top:none
+}
+#blog_table tr:last-child{
+	border-bottom:none
+} 
 #product_yacht{
 	padding: 10px;
 	
