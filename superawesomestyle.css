@@ -115,13 +115,13 @@ footer {
 	
 }
 #addtocart fieldset{
-	background-color: green;
+	background-color: #00B21C;
 	border-color: black;
 	border-width: 3px;
 }
 #addtocart fieldset legend{
 	border: solid 10px #000000;
-	background-color: green;
+	background-color: #00B21C;
 	border-width: 3px;
 }
 
@@ -149,4 +149,31 @@ footer {
 	width: 155px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.button {
+	padding: 10px;
+	font-size: 100%;
+	background-color: #00B21C;
+}
+
+.altgreen {
+	border: 0;
+}
+
+.altgreen tr:nth-child(odd) {
+	border: none;
+	background: #35FF54;
+}
+
+.altgreen tr:nth-child(1) {
+	background: none;
+}
+
+.altgreen tr:last-child {
+	background: none;
+}
+
+.holder {
+	height: 21px;
 }
