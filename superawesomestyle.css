@@ -3,6 +3,10 @@
 	width: 460px;
 }
 
+p{
+	line-height:2em;
+}
+
 nav {
 	display: block;
 	width: 960px;
@@ -89,7 +93,39 @@ footer {
 	padding: 15px;
 	border: 1px solid black;
 	margin-right: 10px;
+	
 }
+.product_table {
+	border-spacing: 20px;
+
+}
+.yacht_and_cart {
+	float:right;
+}
+#blog_table tr{
+	padding: 50px;
+	border: 2px solid black;
+}
+#product_yacht{
+	padding: 10px;
+	
+}
+#addtocart{
+	padding:5px;
+	
+}
+#addtocart fieldset{
+	background-color: green;
+	border-color: black;
+	border-width: 3px;
+}
+#addtocart fieldset legend{
+	border: solid 10px #000000;
+	background-color: green;
+	border-width: 3px;
+}
+
+
 
 #yacht {
 	width: 207px;
