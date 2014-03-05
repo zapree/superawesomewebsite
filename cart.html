@@ -10,6 +10,19 @@
 		<script src="js/jquery-2.1.0.min.js"></script>
 		<!-- Date: 2014-01-29 -->
 		<!-- AUTHORS Eugene Balaguer and Parker Mathewson -->
+		<script src="js/main_script.js"></script>
+		<script>
+			
+			var first_item = new CartItem("dat ass", 10, 0);
+			var the_cart = new Cart();
+			the_cart.addcartitem(first_item);
+			the_cart.addcartitem(first_item);
+			the_cart.getcartinfo();
+			the_cart.removecartitem(first_item);
+			console.log("space");
+			the_cart.getcartinfo();
+			
+		</script>
 	</head>
 
 	<body>
