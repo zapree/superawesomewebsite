@@ -45,6 +45,7 @@
 		<h3>
 			My love of Penguins has multiplied with the purchase of a Super Awesome Penguin set
 		</h3>
+		<img style="float: right;" src="pictures/missilelauncher.jpg" alt="fire ze missiles"/>
 		<p>
 			Recently I purchased the super awesome penguin set expecting just a set of normal penguins for the 
 			Price.  Man was I blown away when those penguins were everything you said they'd be.  One even
@@ -70,11 +71,33 @@
 			Well it's love, that I need. Ohh...
 
 		</p>
-		<img src="pictures/missilelauncher.jpg" alt="fire ze missiles"/>
-		<form action="addcomment.html">
-			<input type="submit" value="Add Comment">
+		
+		<div class="comments">
+			<h3>Comments</h3>
+		</div>
+		<form action="sale.html" method="post">
+			<fieldset>
+				<legend>Add comment to article</legend>
+				<table>
+					<tr>
+						<td>Email <input name="email box" type="email" /></td>
+						<tr>
+							<td>Comment</td>
+						</tr>
+						<td>
+						<textarea name="Comment Box" rows="6" cols="40">Add Comment Here!</textarea>
+					</td>
+					<tr>
+						<td><input onclick="addComment();" class="button" type="submit" value="Add Comment" /></td>
+					</tr>
+				</table>
+			</fieldset>
 		</form>
 		<footer> <p class="foot"> &copy; 2014 Eugene Balaguer, Parker Mathewson.  All rights reserved. </p></footer>
 	</body>
+	
+	<script>
+		
+	</script>
 	
 </html>
