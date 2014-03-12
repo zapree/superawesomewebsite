@@ -207,3 +207,12 @@ footer {
 .shippingtable2 tr td{
 	width: 110px;
 }
+
+.comment {
+	margin-left: 10px;
+}
+
+.commentDate {
+	color: gray;
+	font-style: italic;
+}
