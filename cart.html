@@ -13,15 +13,20 @@
 		<script src="js/main_script.js"></script>
 		<script>
 			
-			var first_item = new CartItem("dat ass", 10, 0);
-			var the_cart = new Cart();
-			the_cart.addcartitem(first_item);
-			the_cart.addcartitem(first_item);
-			the_cart.getcartinfo();
-			the_cart.removecartitem(first_item);
-			console.log("space");
-			the_cart.getcartinfo();
+			cart_products = {
+			yacht : new CartItem("Super Awesome Island Yacht", 1000000000.00, 0),
+			car : new CartItem("Super Awesome Car", 300000.00, 0),
+			tee : new CartItem("Super Awesome Tee", 20.00, 0),
+			penguin : new CartItem("Super Awesome Penguins", 400000.00, 0)
+			};
 			
+			var the_cart = new Cart();
+			for(product in cart_products){
+				
+				the_cart.addcartitem(cart_products[product]);
+			}
+			
+					
 		</script>
 	</head>
 
@@ -58,59 +63,27 @@
 		</header>
 		<h2>Shopping Cart</h2>
 		<form action="shipping.html" method="post">
-			<table class="altgreen" cellspacing="0">
-				<tr>
-					<th>Product</th>
-					<th>Price</th>
-					<th>Quantity</th>
-					<th>Line Total</th>
-					<td> </td>
-				</tr>
-				<tr><td colspan="5"><hr></td></tr>
-				<tr>
-					<td>Super Awesome Island Yacht</td>
-					<td>$1,000,000,000.00</td>
-					<td>1</td>
-					<td>$1,000,000,000.00</td>
-					<td><a href="">remove?</a></td>
-				</tr>
-				<tr>
-					<td>Super Awesome Car</td>
-					<td>$150,000.00</td>
-					<td>2</td>
-					<td>$300,000.00</td>
-					<td><a href="">remove?</a></td>
-				</tr>
-				<tr>
-					<td>Super Awesome Tee</td>
-					<td>$149.00</td>
-					<td>1</td>
-					<td>$149.00</td>
-					<td><a href="">remove?</a></td>
-				</tr>
-				<tr>
-					<td colspan="5"><hr></td>
-				</tr>
-				<tr class="totalline">
-					<td> </td>
-					<td> </td>
-					<td>Total</td>
-					<td>$1,000,300,149.00</td>
-					<td> </td>
-				</tr>
-				<tr>
-					<td> </td>
-					
-					<td><input class="button" type="submit" value="Continue" /></td>
-					<td> </td>
-					<td> </td>
-					<td> </td>
-				</tr>
+			<table id="cart_table" class="altgreen" cellspacing="0">
+
+			</table>
+			
+			<table>
+			<tr>
+				<td> </td>
+				
+				<td><input class="button" type="submit" value="Continue" /></td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
 			</table>
 		</form>
 		<footer> <p class="foot"> &copy; 2014 Eugene Balaguer, Parker Mathewson.  All rights reserved. </p></footer>
 		<script>
 			rotateBanner(".rotate", "source.html");
+			the_cart.getcartinfo();
+			this_cart_table = new CartTable(the_cart);
 		</script>
 	</body>
+	
 </html>
