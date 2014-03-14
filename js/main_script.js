@@ -111,7 +111,7 @@ function validateForm() {
 	var nameRegex = new RegExp("^[A-Za-z][-a-zA-Z ]+$");
 	var emailRegex = new RegExp("^[A-Za-z0-9][^\ .@]*@[a-zA-Z0-9-]{1,63}(\.[a-zA-Z0-9-]{1,63})+");
 	var cityRegex = new RegExp("((^[a-zA-Z]+$){1,63})");
-	var phoneRegex = /^\d{10}$/;
+	var phoneRegex = /^[(]\d{3}[)]\d{3}-\d{4}$/;
 	var addressRegex = new RegExp("[A-Za-z0-9 ]{1,63}");
 	var radioValid = false;
 	
