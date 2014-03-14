@@ -111,7 +111,7 @@ function validateForm() {
 	var nameRegex = new RegExp("^[A-Za-z][-a-zA-Z ]+$");
 	var emailRegex = new RegExp("^[A-Za-z0-9][^\ .@]*@[a-zA-Z0-9-]{1,63}(\.[a-zA-Z0-9-]{1,63})+");
 	var cityRegex = new RegExp("[a-zA-Z]{1,63}");
-	var phoneRegex = new RegExp("^[(]\d{3}[)]\d{3}-\d{4}");
+	var phoneRegex = /^\d{10}$/;
 	var addressRegex = new RegExp("[A-Za-z0-9 ]{1,63}");
 	var radioValid = false;
 	
@@ -121,19 +121,35 @@ function validateForm() {
 	var phone = $("#phone");
 	var address = $("#address");
 	
+	var radios = document.getElementsByName('group1');
+	var nextday = $("#nextday");
+	var secondday = $("#secondday");
+	var ground = $("#ground");
 	
 	var flag = true;
-//	while (!radioValid && i < radios.length) {
-//        if (radios[i].checked)
-//        	radioValid = false;
-//        i++;        
-//    }
-//	if(!radioValid) {
-//		   console.log("shipping radio invalid");
-//		   radios[0].css("background","#FF5050");
-//	}
 	
-//	else radios.parents('tr').css("background", "none");
+	var i = 0;
+	
+	while (!radioValid && i < radios.length) {
+        if (radios[i].checked)
+        {
+        	radioValid = true;
+        	console.log("radio checked");
+        }
+        i++;        
+    }
+	if(!radioValid) {
+		   console.log("shipping radio invalid");
+		   nextday.parent().css("background","#FF5050");
+		   secondday.parent().css("background","#FF5050");
+		   ground.parent().css("background","#FF5050");
+		   flag = false;
+	}
+	else {
+		nextday.parent().css("background","none");
+		secondday.parent().css("background","none");
+		ground.parent().css("background","none");
+	}
 	
 	if (!nameRegex.test(name.val())) {
 	   //alert('You have entered an invalid name.');
