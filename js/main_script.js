@@ -121,14 +121,19 @@ function validateForm() {
 	var phone = $("#phone");
 	var address = $("#address");
 	
-//	var radios = document.getElementsByName("yesno").value;
 	
 	var flag = true;
-	
 //	while (!radioValid && i < radios.length) {
-//        if (radios[i].checked) radioValid = true;
+//        if (radios[i].checked)
+//        	radioValid = false;
 //        i++;        
 //    }
+//	if(!radioValid) {
+//		   console.log("shipping radio invalid");
+//		   radios[0].css("background","#FF5050");
+//	}
+	
+//	else radios.parents('tr').css("background", "none");
 	
 	if (!nameRegex.test(name.val())) {
 	   //alert('You have entered an invalid name.');
