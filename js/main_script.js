@@ -109,8 +109,8 @@ function pauseRotate(element, result) {
 
 function validateForm() {
 	var nameRegex = new RegExp("^[A-Za-z][-a-zA-Z ]+$");
-	var emailRegex = new RegExp("^[A-Za-z0-9][^\.@]*@[a-zA-Z0-9-]{1,63}(\.[a-zA-Z0-9-]{1,63})+");
-	var cityRegex = new RegExp("[a-zA-Z ]{1,63}");
+	var emailRegex = new RegExp("^[A-Za-z0-9][^\ .@]*@[a-zA-Z0-9-]{1,63}(\.[a-zA-Z0-9-]{1,63})+");
+	var cityRegex = new RegExp("[a-zA-Z]{1,63}");
 	var phoneRegex = new RegExp("^[(]\d{3}[)]\d{3}-\d{4}");
 	var addressRegex = new RegExp("[A-Za-z0-9 ]{1,63}");
 	var radioValid = false;
@@ -137,34 +137,10 @@ function validateForm() {
 	
 	if (!nameRegex.test(name.val())) {
 	   //alert('You have entered an invalid name.');
-	   console.log(name.val());
+	   
 	   console.log("text name invalid");
 	   name.parents('tr').css("background","#FF5050");
 	   flag = false;
-	}
-	else name.parents('tr').css("background","none");
-	
-	if (!emailRegex.test(email.val())) {
-	   //alert('You have entered an invalid email.');
-	   console.log("text email invalid");
-	   email.parents('tr').css("background","#FF5050");
-	   flag = false;
-	}
-	else name.parents('tr').css("background","none");
-	
-	if (!cityRegex.test(city.val())) {
-	  //alert('You have entered an invalid city.');
-	  console.log("text city invalid");
-	  city.parents('tr').css("background","#FF5050");
-	  flag = false;
-	}
-	else name.parents('tr').css("background","none");
-	
-	if (!phoneRegex.test(phone.val())) {
-	  //alert('You have entered an invalid phone.');
-	  console.log("text phone invalid");
-	  phone.parents('tr').css("background","#FF5050");
-	  flag = false;
 	}
 	else name.parents('tr').css("background","none");
 	
@@ -174,7 +150,35 @@ function validateForm() {
 	   address.parents('tr').css("background","#FF5050");
 	   flag = false;
 	}
-	else name.parents('tr').css("background","none");
+	else address.parents('tr').css("background","none");
+	
+	if (!cityRegex.test(city.val())) {
+	  //alert('You have entered an invalid city.');
+	  console.log("text city invalid");
+	  city.parents('tr').css("background","#FF5050");
+	  flag = false;
+	}
+	else city.parents('tr').css("background","none");
+	
+	if (!emailRegex.test(email.val())) {
+	   //alert('You have entered an invalid email.');
+	   console.log(email.parents('tr'));
+	   console.log("text email invalid");
+	   email.parents('tr').css("background","#FF5050");
+	   flag = false;
+	}
+	else email.parents('tr').css("background","none");
+	
+	
+	if (!phoneRegex.test(phone.val())) {
+	  //alert('You have entered an invalid phone.');
+	  console.log("text phone invalid");
+	  phone.parents('tr').css("background","#FF5050");
+	  flag = false;
+	}
+	else phone.parents('tr').css("background","none");
+	
+	
 	if(!flag)alert('You have invalid entries.');
 	return flag;
 }
