@@ -110,8 +110,8 @@ function pauseRotate(element, result) {
 function validateForm() {
 	var nameRegex = new RegExp("^[A-Za-z][-a-zA-Z ]+$");
 	var emailRegex = new RegExp("^[A-Za-z0-9][^\ .@]*@[a-zA-Z0-9-]{1,63}(\.[a-zA-Z0-9-]{1,63})+");
-	var cityRegex = new RegExp("[a-zA-Z]{1,63}");
-	var phoneRegex = new RegExp("^[(]\d{3}[)]\d{3}-\d{4}");
+	var cityRegex = new RegExp("((^[a-zA-Z]+$){1,63})");
+	var phoneRegex = new RegExp("^[(]\d{3}[)]\d{3}[-]\d{4}");
 	var addressRegex = new RegExp("[A-Za-z0-9 ]{1,63}");
 	var radioValid = false;
 	
@@ -157,7 +157,6 @@ function validateForm() {
 	
 	if (!emailRegex.test(email.val())) {
 	   //alert('You have entered an invalid email.');
-	   console.log(email.parents('tr'));
 	   console.log("text email invalid");
 	   email.parents('tr').css("background","#FF5050");
 	   flag = false;
