@@ -134,29 +134,22 @@
 	
 	
 var getCommentStatus = 'php/postcomment.php';
-var getCommentLocation = 'control/postgetchat.php';
-var addCommentLocation = 'control/postaddtochat.php';
 	
 function addComment () {
 	var commentUser = (document.getElementById('commentEmail').value).split('@')[0];
 	var comment = document.getElementById('commentPost').value;
 	
-	sendComment(commentUser, comment, addCommentLocation);
+	sendComment(commentUser, comment);
 }
 
-function sendComment(theUser, theComment, theLocation) {
+function sendComment(theUser, theComment) {
 	$.post(getCommentStatus, { status: "good" },
 		function(tempData) {
 			var result = $.parseJSON(tempData);
 			if(result[0].status == 'good') {
 				$("#blog-comments").val('');
 				
-				$.post(theLocation, {user: theUser, message: theComment}, 
-					function (returnedData) {
-						var results = $.parseJSON(returnedData);
-						
-					});
-				postComment();
+				postComment(theUser, theComment);
 			}
 			else {
 				alert("Comment status not good");
@@ -164,16 +157,11 @@ function sendComment(theUser, theComment, theLocation) {
 	});
 }
 
-function postComment() {
-	$.post(getCommentLocation, {}, function (returnedData) {
-		var results = $.parseJSON(returnedData);
-		$.each(results, function() {
-			$("#blog-comments").append('<div class="comment"><div class="commentUser">'
-					+ this.user + '</div><div class="commentDate">'
-					+ this.postdatetime + '</div><div class="commentPost">'
-					+ this.message + '</div></div>');
-		});
-	});
+function postComment(theUser, theComment) {
+	$("#blog-comments").append('<div class="comment"><div class="commentUser">'
+			+ theUser + '</div><div class="commentDate">'
+			+ new Date() + '</div><div class="commentPost">'
+			+ theComment + '</div></div>');
 }
 
 function rotateBanner(element, source) {
@@ -197,6 +185,57 @@ function pauseRotate(element, result) {
 			result.image +'" /></a>' );
 	console.log(result + "is the new banner image");
 }
+
+function validateForm() {
+	var nameRegex = new RegExp("^[A-Za-z][-a-zA-Z ]+$");
+	var emailRegex = new RegExp("^[A-Za-z0-9][^\.@]*@[a-zA-Z0-9-]{1,63}(\.[a-zA-Z0-9-]{1,63})+");
+	var cityRegex = new RegExp("[a-zA-Z ]{1,63}");
+	var phoneRegex = new RegExp("^[(]\d{3}[)]\d{3}-\d{4}");
+	var addressRegex = new RegExp("[A-Za-z0-9 ]{1,63}");
+	var radioValid = false;
+	
+	var name = document.getElementById("name").value;
+	var email = document.getElementById("email").value;
+	var city = document.getElementById("city").value;
+	var phone = document.getElementById("phone").value;
+	var address = document.getElementById("address").value;
+//	var radios = document.getElementsByName("yesno").value;
+	
+	var flag = true;
+	
+//	while (!radioValid && i < radios.length) {
+//        if (radios[i].checked) radioValid = true;
+//        i++;        
+//    }
+	
+	if (!nameRegex.test(name)) {
+	   alert('You have entered an invalid name.');
+	   flag = false;
+	}
+	
+	if (!emailRegex.test(email)) {
+	   alert('You have entered an invalid email.');
+	   flag = false;
+	}
+	
+	if (!cityRegex.test(city)) {
+	  alert('You have entered an invalid city.');
+	  flag = false;
+	}
+	
+	if (!phoneRegex.test(phone)) {
+	  alert('You have entered an invalid phone.');
+	  flag = false;
+	}
+	
+	if (!addressRegex.test(address)) {
+	   alert('You have entered an invalid address.');
+	   flag = false;
+	}
+	
+	return flag;
+}
+
 	CartTable.prototype.deleterow = function(item) {
 		console.log("trying to delete");
 		num =1;
