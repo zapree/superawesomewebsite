@@ -120,7 +120,7 @@ footer {
 	border-top:none
 }
 #blog_table tr:last-child{
-	border-bottom
+	border-bottom: none;
 } 
 #product_yacht{
 	padding: 10px;
