@@ -115,11 +115,12 @@ function validateForm() {
 	var addressRegex = new RegExp("[A-Za-z0-9 ]{1,63}");
 	var radioValid = false;
 	
-	var name = document.getElementById("name").value;
-	var email = document.getElementById("email").value;
-	var city = document.getElementById("city").value;
-	var phone = document.getElementById("phone").value;
-	var address = document.getElementById("address").value;
+	var name = $("#name");
+	var email = $("#email");
+	var city = $("#city");
+	var phone = $("#phone");
+	var address = $("#address");
+	
 //	var radios = document.getElementsByName("yesno").value;
 	
 	var flag = true;
@@ -129,31 +130,47 @@ function validateForm() {
 //        i++;        
 //    }
 	
-	if (!nameRegex.test(name)) {
-	   alert('You have entered an invalid name.');
+	if (!nameRegex.test(name.val())) {
+	   //alert('You have entered an invalid name.');
+	   console.log(name.val());
+	   console.log("text name invalid");
+	   name.parents('tr').css("background","#FF5050");
 	   flag = false;
 	}
+	else name.parents('tr').css("background","none");
 	
-	if (!emailRegex.test(email)) {
-	   alert('You have entered an invalid email.');
+	if (!emailRegex.test(email.val())) {
+	   //alert('You have entered an invalid email.');
+	   console.log("text email invalid");
+	   email.parents('tr').css("background","#FF5050");
 	   flag = false;
 	}
+	else name.parents('tr').css("background","none");
 	
-	if (!cityRegex.test(city)) {
-	  alert('You have entered an invalid city.');
+	if (!cityRegex.test(city.val())) {
+	  //alert('You have entered an invalid city.');
+	  console.log("text city invalid");
+	  city.parents('tr').css("background","#FF5050");
 	  flag = false;
 	}
+	else name.parents('tr').css("background","none");
 	
-	if (!phoneRegex.test(phone)) {
-	  alert('You have entered an invalid phone.');
+	if (!phoneRegex.test(phone.val())) {
+	  //alert('You have entered an invalid phone.');
+	  console.log("text phone invalid");
+	  phone.parents('tr').css("background","#FF5050");
 	  flag = false;
 	}
+	else name.parents('tr').css("background","none");
 	
-	if (!addressRegex.test(address)) {
-	   alert('You have entered an invalid address.');
+	if (!addressRegex.test(address.val())) {
+	   //alert('You have entered an invalid address.');
+	   console.log("text address invalid");
+	   address.parents('tr').css("background","#FF5050");
 	   flag = false;
 	}
-	
+	else name.parents('tr').css("background","none");
+	if(!flag)alert('You have invalid entries.');
 	return flag;
 }
 

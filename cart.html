@@ -48,7 +48,7 @@
 		<h2>Shopping Cart</h2>
 		<form action="shipping.html" method="post">
 			<table id="cart_table" class="altgreen" cellspacing="0">
-				<tr>
+				<tr id='submit_row'>
 					<td> </td>
 					<td><input class="button" id='shopping_button' type="submit" value="Continue" /></td>
 					<td> </td>
@@ -84,7 +84,7 @@
 			$('<th></th>').text("Quantity").appendTo(header);
 			$('<th></th>').text("Line Total").appendTo(header);
 			$('<th></th>').text("").appendTo(header);
-			header.insertBefore($("#shopping_button"));
+			header.insertBefore($("#submit_row"));
 			var total_line = $("<tr></tr>");
 			total_line.attr("id", "total_line");
 			$('<td></td>').text(" ").appendTo(total_line);
@@ -94,7 +94,7 @@
 			total.attr("id", "total");
 			total.text("$"+the_cart.cart_total.toString().replace( /(\d)(?=(\d{3})+$)/g, "$1,"  )+".00");
 			total_line.append(total);
-			total_line.insertBefore($("#shopping_button"));
+			total_line.insertBefore($("#submit_row"));
 			
 			
 			
@@ -121,9 +121,11 @@
 				new_row.insertBefore($("#total_line"));
 				
 			}
-			table.find('hr').css("");
-			table.children().css("padding", "10px 33px");
-			table.children().css("padding", "10px 33px");
+			console.log(table.find('hr'));
+			$("#header_row").css("border", "thin");
+			$("#header_row").css("border-bottom", "black");
+			//table.children('tr').css("padding", "10px 33px");
+			
 				
 			
 		</script>
