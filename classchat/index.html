@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+		
+	<head>
+ 		<title>Day 13 Practice File</title>
+		<meta charset="UTF-8" />
+		<meta name="description" content="This is a practice file for day 13." />
+		<script src="js/jquery-2.1.0-min.js"></script>
+		<script src="js/chat.js"></script>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<script>
+		var getChatLocation = 'control/postgetchat.php';
+		setInterval(function() {
+			displayChatLog(getChatLocation);
+		}, 2500);
+		</script>
+		<div id="chat">
+			<div>
+				<input type="text" class="message" id="chatinput" value="Type message to start chatting!" />
+				<button class="button" onclick="send();">Send</button>
+			</div>
+			<div id="chatscreen">
+			
+			</div>
+		</div>
+	</body>
+</html>
