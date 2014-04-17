@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+	$title = "Index.html";
+	
+?>
 
 <html>
 	<head>
@@ -23,9 +26,9 @@
 			<nav>
 				<ul class="nav">
 					<li>
-						<a href="products.html">Products</a>
+						<a href="products.php">Products</a>
 						<ul>
-							<li class="productdrop"><a href="product.html">Super Awesome Yacht Island</a></li>
+							<li class="productdrop"><a href="product.php">Super Awesome Yacht Island</a></li>
 							<li class="productdrop"><a href="">Super Awesome Shirt</a></li>
 							<li class="productdrop"><a href="">Super Awesome Penguins</a></li>
 							<li class="productdrop"><a href="">Super Awesome Car</a></li>
@@ -33,23 +36,18 @@
 					</li>
 		
 					<li>
-						<a href="blog.html">Blog</a>
+						<a href="blog.php">Blog</a>
 					</li>
 					<li>
-						<a href="about.html">About</a>
+						<a href="about.php">About</a>
 					</li>
 					<li>
-						<a href="cart.html">Cart</a>
+						<a href="cart.php">Cart</a>
 					</li>
 				</ul>
 			</nav>
 			</div>
-		</header>
-
-		<img class="front" src="pictures/SuperAwesomePicture.png" alt="superawesomepicture" />
-		<footer> <p class="foot"> &copy; 2014 Eugene Balaguer, Parker Mathewson.  All rights reserved. </p></footer>
+	
 		<script>
 			rotateBanner(".rotate", "source.html");
 		</script>
-	</body>	
-</html>

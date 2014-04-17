@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Super Awesome Shipping</title>
-		<meta name="author" content="Eugene Balaguer, Parker Mathewson" />
-		<meta name="description" content="Our super awesome csc337 project" />
-		<link href="css/superawesomestyle.css" rel="stylesheet" type="text/css">
-		<script src="js/jquery-2.1.0.min.js"></script>
-		<script src="js/main_script.js" type="text/javascript"></script>
-		<!-- Date: 2014-01-29 -->
-		<!-- AUTHORS Eugene Balaguer and Parker Mathewson -->
-	</head>
-	<body>
-		<header>
-			<div>
-			<h1 class="rotate">
-				<a class="banner" href="index.html"><img id="banner" alt="Super Awesome Banner" src="pictures/banner_SuperAwesomePicture.png" /></a>
-			</h1>
-			<nav>
-				<ul class="nav">
-					<li>
-						<a href="products.html">Products</a>
-						<ul>
-							<li class="productdrop"><a href="product.html">Super Awesome Yacht Island</a></li>
-							<li class="productdrop"><a href="">Super Awesome Shirt</a></li>
-							<li class="productdrop"><a href="">Super Awesome Penguins</a></li>
-							<li class="productdrop"><a href="">Super Awesome Car</a></li>
-						</ul>
-					</li>
-		
-					<li>
-						<a href="blog.html">Blog</a>
-					</li>
-					<li>
-						<a href="about.html">About</a>
-					</li>
-					<li>
-						<a href="cart.html">Cart</a>
-					</li>
-				</ul>
-			</nav>
-			</div>
-		</header>
+<?php include('header.php'); ?>
 		<h2>Shipping Information</h2>
 		<form action="total.html" method="post">
 			<fieldset id="shipping">
@@ -114,9 +70,4 @@
 				</table>
 			</fieldset>
 		</form>
-		<footer> <p class="foot"> &copy; 2014 Eugene Balaguer, Parker Mathewson.  All rights reserved. </p></footer>
-		<script>
-			//rotateBanner(".rotate", "source.html");
-		</script>
-	</body>
-</html>
+<?php include('footer.php'); ?>
