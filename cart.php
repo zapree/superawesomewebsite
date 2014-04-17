@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 		<h2>Shopping Cart</h2>
-		<form action="shipping.html" method="post">
+		<form action="shipping.php" method="post">
 			<table id="cart_table" class="altgreen" cellspacing="0">
 				<tr id='submit_row'>
 					<td> </td>

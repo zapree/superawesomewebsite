@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 		<h2>Shipping Information</h2>
-		<form action="total.html" method="post">
+		<form action="total.php" method="post">
 			<fieldset id="shipping">
 				<legend>Shipping Information</legend>
 				<table class="shippingtable">

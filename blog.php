@@ -42,7 +42,7 @@
 						Monday, January 27
 						
 					</p>	
-					<p><a href="article.html">Click here to read more</a></p>
+					<p><a href="article.php">Click here to read more</a></p>
 				</td>
 			</tr>
 			<tr>

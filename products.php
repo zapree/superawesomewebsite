@@ -6,7 +6,7 @@
 			<tr>
 				<td class="products">
 					<img src="pictures/goddamnislandyacht.jpg" alt="islandyacht"/>
-					<p id="yacht"><a href="product.html">Super Awesome Yacht Island </a></p> 
+					<p id="yacht"><a href="product.php">Super Awesome Yacht Island </a></p> 
 				</td>
 				<td class="products">
 					<img src="pictures/Superawesometee.jpg" alt="tee"/>

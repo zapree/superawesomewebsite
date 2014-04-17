@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 		<h3>Add Comment</h3>
-		<form action="sale.html" method="post">
+		<form action="sale.php" method="post">
 			<fieldset>
 				<legend>Add comment to article</legend>
 				<table>

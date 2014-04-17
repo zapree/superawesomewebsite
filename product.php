@@ -4,7 +4,7 @@
 </h3>
 <div class="yacht_and_cart">
 	<img id="product_yacht" alt ="superyacht" src="pictures/goddamnislandyacht.jpg"/>
-	<form id="addtocart" action="cart.html" method="get">
+	<form id="addtocart" action="cart.php" method="get">
 		<fieldset>
 			<legend>Add to Cart</legend>
 			<h3>$1,000,000,000</h3>
