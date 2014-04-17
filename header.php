@@ -21,7 +21,7 @@
 		<header>
 			<div>
 			<h1 class="rotate">
-				<a class="banner" href="index.html"><img id="banner" alt="Super Awesome Banner" src="pictures/banner_SuperAwesomePicture.png" /></a>
+				<a class="banner" href="index.php"><img id="banner" alt="Super Awesome Banner" src="pictures/banner_SuperAwesomePicture.png" /></a>
 			</h1>
 			<nav>
 				<ul class="nav">
