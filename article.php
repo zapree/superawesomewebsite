@@ -1,36 +1,27 @@
-<?php $title = ""//some DB pull  ?>
-<?php include('header.php'); ?>
-
+<?php
+	$DBH = new PDO("mysql:hsot=localhost;dbname=hw4", 'root', '');
+	include('header.php');
+	$id = $_GET['article'];//some DB pull
+	$stmt = $DBH->prepare("SELECT * FROM blog WHERE id = " . $id);
+	$stmt->execute();
+	$article = null;
+	$articles = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+	foreach($articles as $articlex) {
+		$title = $articlex['title'];
+		$article = $articlex;
+	}
+?>	
 		<h3>
-			My love of Penguins has multiplied with the purchase of a Super Awesome Penguin set
+			<?php echo $title ?>
 		</h3>
-		<img src="pictures/missilelauncher.jpg" alt="fire ze missiles"/>
-		<p>
-			Recently I purchased the super awesome penguin set expecting just a set of normal penguins for the 
-			Price.  Man was I blown away when those penguins were everything you said they'd be.  One even
-			had a genuine rocket launcher!  I might have blown off a foot in the fun, but at least now I get to 
-			roleplay that I'm a pirate.  Yaaaarrrr have to try these freakin penguins out.
-		</p>
-		<p>
-			With full disclosure one of the penguins is kinda lame, in my batch his name was jimmy.  Jimmy just
-			didn't have bobby's flare.  I mean part of it is that bobby was the rocket launcher shooter, and 
-			Jimmy was the one that only got to load it, so I don't really blame him.  Poor Jimmy, always getting
-			the slapstick soot face from bobby getting it too close to him.  Tragic really.
-		</p>
-		<p>
-			Towards the end we graduated from small rocket launchers to a big truck launched one. anyways I'm bored of 
-			bullshitting so here's some more lyrics- santaria-I don't practice Santeria
-			I ain't got no crystal ball
-			Well, I had a million dollars but I, I'd spend it all.
-			If I could find that Heina, and that Sancho that she's found.
-			Well I'd pop a cap in Sancho I'd slap her down.
-			
-			What I really wanna know, mah baby, mmmm...
-			What I really wanna say I can't define.
-			Well it's love, that I need. Ohh...
-
-		</p>
+		<div>
+			<img class="articleImage" src=<?php echo $article['image'];?> />
 		
+			<p>
+				<?php echo $article['blog'] ?>
+			</p>
+
+		</div>
 		<div id="blog-comments">
 			<h3>Comments</h3>
 		</div>
