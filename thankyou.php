@@ -1,3 +1,4 @@
+<?php $title = "A Super Awesome Thankyou!" ?>
 <?php include('header.php'); ?>
 		<h2>Thank You!</h2>
 		<p>

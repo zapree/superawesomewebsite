@@ -1,3 +1,4 @@
+<?php $title = "Super Awesome Products!" ?>
 <?php include('header.php'); ?>
 		<h3>
 			Come take a look at our super awesome products

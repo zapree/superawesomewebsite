@@ -1,3 +1,4 @@
+<?php $title = "A Super Awesome Total" ?>
 <?php include('header.php'); ?>
 		<form action="thankyou.html" method="post">
 			<table class="altgreen" cellspacing="0">

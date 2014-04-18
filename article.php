@@ -1,8 +1,10 @@
+<?php $title = ""//some DB pull  ?>
 <?php include('header.php'); ?>
+
 		<h3>
 			My love of Penguins has multiplied with the purchase of a Super Awesome Penguin set
 		</h3>
-		<img style="float: right;" src="pictures/missilelauncher.jpg" alt="fire ze missiles"/>
+		<img src="pictures/missilelauncher.jpg" alt="fire ze missiles"/>
 		<p>
 			Recently I purchased the super awesome penguin set expecting just a set of normal penguins for the 
 			Price.  Man was I blown away when those penguins were everything you said they'd be.  One even

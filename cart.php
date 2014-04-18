@@ -1,3 +1,4 @@
+<?php $title = "Cart of Awesome" ?>
 <?php include('header.php'); ?>
 		<h2>Shopping Cart</h2>
 		<form action="shipping.php" method="post">

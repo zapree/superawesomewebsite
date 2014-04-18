@@ -1,3 +1,4 @@
+<?php $title = "Product Title from DB"//some DB call ?>
 <?php include('header.php'); ?>
 <h3>
 	You Heard Right, A Yacht Island

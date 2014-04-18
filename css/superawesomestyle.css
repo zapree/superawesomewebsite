@@ -230,3 +230,8 @@ footer {
 	color: gray;
 	font-style: italic;
 }
+
+.blogImage {
+	height: 150;
+	width: 200;
+}

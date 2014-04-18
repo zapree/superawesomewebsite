@@ -1,12 +1,11 @@
 <?php
-	$title = "Index.html";
-	
+	$DBH = new PDO("mysql:hsot=localhost;dbname=hw4", 'root', '');
 ?>
 
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Homepage of Super Awesomeness</title>
+		<title><?php echo $title; ?></title>
 		<meta name="author" content="Eugene Balaguer, Parker Mathewson" />
 		<meta name="description" content="Our super awesome csc337 project" />
 		<link href="css/superawesomestyle.css" rel="stylesheet" type="text/css">

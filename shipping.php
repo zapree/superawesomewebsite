@@ -1,3 +1,4 @@
+<?php $title = "Shipping of Awesome" ?>
 <?php include('header.php'); ?>
 		<h2>Shipping Information</h2>
 		<form action="total.php" method="post">

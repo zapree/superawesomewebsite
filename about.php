@@ -1,3 +1,4 @@
+<?php $title = "About Super Awesome" ?>
 <?php include('header.php'); ?>
 		<h2>Our History</h2>
 		<p>
