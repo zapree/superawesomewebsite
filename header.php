@@ -27,10 +27,10 @@
 					<li>
 						<a href="products.php">Products</a>
 						<ul>
-							<li class="productdrop"><a href="product.php">Super Awesome Yacht Island</a></li>
-							<li class="productdrop"><a href="">Super Awesome Shirt</a></li>
-							<li class="productdrop"><a href="">Super Awesome Penguins</a></li>
-							<li class="productdrop"><a href="">Super Awesome Car</a></li>
+							<li class="productdrop"><a href="product.php?product=1">Super Awesome Yacht Island</a></li>
+							<li class="productdrop"><a href="product.php?product=2">Super Awesome Shirt</a></li>
+							<li class="productdrop"><a href="product.php?product=3">Super Awesome Penguins</a></li>
+							<li class="productdrop"><a href="product.php?product=4">Super Awesome Car</a></li>
 						</ul>
 					</li>
 		
