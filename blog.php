@@ -11,10 +11,10 @@
 	
 			foreach ($articles as $article) {
 				echo '<tr><td>';
-				echo '<img class="blogImage" ' . $article['image'] . ' />';
+				echo '<img class="blogImage" src="' . $article['image'] . '" />';
 				echo '</td><td><h3>' . $article['title'];
 				echo '</h3><p>' . $article['post_date'] . '</p>';
-				echo '<p><a href="' . $article['title'] . '">Click here to read more</a></p></td></tr>';
+				echo '<p><a href="article.php?article=' . $article['id'] .  '">Click here to read more</a></p></td></tr>';
 			}
 		?>
 	</table>
