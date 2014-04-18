@@ -46,6 +46,7 @@
 				</ul>
 			</nav>
 			</div>
+		</header>
 	
 		<script>
 			rotateBanner(".rotate", "source.html");
