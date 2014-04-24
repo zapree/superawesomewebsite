@@ -36,7 +36,6 @@ $product_html = $stmt -> fetch();
 			
 			<input type="text" name="productquantity" value="1" id="productquantity"/>
 			<input type="submit"/>
-			<input type="hidden" name="product_type" value="<?php echo $product_html['id'] ?>"/>
 		</fieldset>
 	</form>
 </div>

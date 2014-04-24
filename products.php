@@ -11,10 +11,10 @@
 <div class="productHolder">
 	<?php 
 		foreach ($products as $product) {
-			$prodTitle = str_replace(' ', '-',$product['name']);
+			$prodID = str_replace(' ', '-',$product['id']);
 			echo '<div class="products">';
 			echo '<img src="' . $product['image'] . '" />';
-			echo '<p class="productLink"><a href="product.php?product=' . $prodTitle .  '">' . $product['name'] . '</a></p></div>';
+			echo '<p class="productLink"><a href="product.php?product=' . $prodID .  '">' . $product['name'] . '</a></p></div>';
 		}
 	?>
 </div>
