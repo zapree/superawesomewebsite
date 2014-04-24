@@ -5,4 +5,15 @@
 			<strong>Thanks for buying our super awesome stuff</strong>
 		</p>
 		<p>Please come again.</p>
+<?php 
+	if (isset($_SESSION['cart'])) { 			
+		 
+		
+		$DBH = new PDO("mysql:host=localhost;dbname=hw4", 'root', '');
+		$stmt = $DBH->prepare("UPDATE `order` SET completed = 1 WHERE id = :orderID;");
+		$stmt->bindValue(':orderID', $_SESSION["order_id"], PDO::PARAM_INT);
+		$stmt->execute();
+		
+	}
+?>
 <?php include('footer.php'); ?>

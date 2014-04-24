@@ -22,23 +22,35 @@
 	Cart.prototype.addcartitem = function(item) {
 		//for adding additional amounts of the same item
 		if( item.product in this.item_list){
-			item.quantity ++;
+			
 		}
 		//if item isn't aready in the list, add it
-		else{
+		else if(item.quantity != 0){
 			this.item_list[item.product] = item;
-			item.quantity = 1;
 			item.line_total = item.quantity*item.price;
 		}
 		
-		this.cart_total += item.price;
+		this.cart_total += item.line_total;
 			
 	};
 	
 	Cart.prototype.removecartitem = function(item) {
 		//get rid of the element from the cart list
 		this.cart_total -= this.item_list[item].line_total;
-		delete this.item_list[item];
+		//delete this.item_list[item];
+		var index = 0;
+		for(var key in this.item_list)
+		{
+		    if(this.item_list[key]==this.item_list[item]){
+		    	index++;
+		    	break;
+		    }
+		    
+		    index++;
+		}
+		alert(index);
+		$.post('php/removefromcart.php', { item: index });
+		
 		
 	};
 	
