@@ -6,6 +6,7 @@
 		</p>
 		<p>Please come again.</p>
 <?php 
+	session_start();
 	if (isset($_SESSION['cart'])) { 			
 		 
 		
@@ -15,6 +16,7 @@
 		$stmt->execute();
 		
 	}
+	
 	session_destroy();
 	
 ?>

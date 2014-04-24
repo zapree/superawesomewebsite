@@ -1,6 +1,6 @@
 <?php $title = "A Super Awesome Total" ?>
 <?php include('header.php'); ?>
-		<form action="thankyou.html" method="post">
+		<form action="thankyou.php" method="post">
 			<table id="cart_table" class="altgreen" cellspacing="0">
 				<tr id='submit_row'>
 					<td> </td>

@@ -1,4 +1,10 @@
 <?php $title = "Shipping of Awesome" ?>
+<?php
+	session_start();
+	if(!isset($_SESSION['order_id'])) {
+		$_SESSION['order_id'] = 1;
+	}
+?>
 <?php include('header.php'); ?>
 		<h2>Shipping Information</h2>
 		<form action="total.php" method="post">
