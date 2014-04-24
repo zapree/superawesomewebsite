@@ -22,15 +22,15 @@
 				}
 			
 				if(isset($_GET['product_type'])){
-					$_SESSION['cart'][$_GET['product_type']]+=$_GET['productquantity'];
+					$_SESSION['cart'][$_GET['product_type']-1]+=$_GET['productquantity'];
 					
 				}
 			?>
 			
 			cart_products = {
 			yacht : new CartItem("Super Awesome Island Yacht", 1000000000.00, <?php echo $_SESSION['cart'][0] ?>),
-			car : new CartItem("Super Awesome Car", 300000.00, <?php echo $_SESSION['cart'][1] ?>),
-			tee : new CartItem("Super Awesome Tee", 20.00, <?php echo $_SESSION['cart'][2] ?>),
+			tee : new CartItem("Super Awesome Tee", 20.00, <?php echo $_SESSION['cart'][1] ?>),
+			car : new CartItem("Super Awesome Car", 300000.00, <?php echo $_SESSION['cart'][2] ?>),
 			penguin : new CartItem("Super Awesome Penguins", 400000.00, <?php echo $_SESSION['cart'][3] ?>)
 			};
 			
