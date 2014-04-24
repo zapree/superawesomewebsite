@@ -55,35 +55,29 @@
 
 	
 var getCommentStatus = 'php/postcomment.php';
-	
-function addComment () {
-	var commentUser = (document.getElementById('commentEmail').value).split('@')[0];
-	var comment = document.getElementById('commentPost').value;
-	
-	sendComment(commentUser, comment);
+
+
+function addCommentForm () {
+	newEmail = $('#email').val();
+	newComment = $('#commentPost').val();
+	$.post('control/postcomment.php',{email:newEmail, comment:newComment, blogid:blog_id}, function(data) {
+		
+		results = jQuery.parseJSON(data);
+    	if (results[0].status == 'good') {
+    		uname = newEmail.split("@")[0];
+	    	commentToAdd = '<div class="comment">';
+			commentToAdd += '<div class="commentUser">' + uname + '</div>';
+			commentToAdd += '<div class="commentDate">' + new Date() + '</div>';
+			commentToAdd += '<div class="commentPost">' + newComment + '</div>';
+			commentToAdd += '</div>';
+			$('#blog-comments').append(commentToAdd);
+			$('#email').val("");
+			$('#comment').val("");	
+		}
+    });	
+	return false;
 }
 
-function sendComment(theUser, theComment) {
-	$.post(getCommentStatus, { status: "good" },
-		function(tempData) {
-			var result = $.parseJSON(tempData);
-			if(result[0].status == 'good') {
-				$("#blog-comments").val('');
-				
-				postComment(theUser, theComment);
-			}
-			else {
-				alert("Comment status not good");
-			}
-	});
-}
-
-function postComment(theUser, theComment) {
-	$("#blog-comments").append('<div class="comment"><div class="commentUser">'
-			+ theUser + '</div><div class="commentDate">'
-			+ new Date() + '</div><div class="commentPost">'
-			+ theComment + '</div></div>');
-}
 
 function rotateBanner(element, source) {
 	$.post(source, {}, function(returnedData) {
@@ -120,11 +114,14 @@ function validateForm() {
 	var city = $("#city");
 	var phone = $("#phone");
 	var address = $("#address");
+	var stateList = document.getElementById("stateSelect");
+	var state = stateList.options[stateList.selectedIndex].text;
 	
 	var radios = document.getElementsByName('group1');
 	var nextday = $("#nextday");
 	var secondday = $("#secondday");
 	var ground = $("#ground");
+	var shipping;
 	
 	var flag = true;
 	
@@ -135,6 +132,7 @@ function validateForm() {
         {
         	radioValid = true;
         	console.log("radio checked");
+        	shipping = radios[i];
         }
         i++;        
     }
@@ -159,7 +157,7 @@ function validateForm() {
 	   flag = false;
 	}
 	else name.parents('tr').css("background","none");
-	
+
 	if (!addressRegex.test(address.val())) {
 	   //alert('You have entered an invalid address.');
 	   console.log("text address invalid");
@@ -183,19 +181,61 @@ function validateForm() {
 	   flag = false;
 	}
 	else email.parents('tr').css("background","none");
+
 	
-	
-	if (!phoneRegex.test(phone.val())) {
+	//if (!phoneRegex.test(phone.val())) {
 	  //alert('You have entered an invalid phone.');
-	  console.log("text phone invalid");
-	  phone.parents('tr').css("background","#FF5050");
-	  flag = false;
-	}
-	else phone.parents('tr').css("background","none");
+	  //console.log("text phone invalid");
+	  //phone.parents('tr').css("background","#FF5050");
+	  //flag = false;
+	//}
+	//else phone.parents('tr').css("background","none");
 	
-	
+	alert("no fucks");
 	if(!flag)alert('You have invalid entries.');
+alert("what the flux");
+/*	$.post('control/postorder.php',
+		{theName:name, theAddress:address, theCity:city, theState:state, theEmail:email, thePhone:phone, theShipping:shipping},
+		function() {*/
+	$.post('control/postorder.php', {theName: name}, function() {
+			alert("no");
+//			results = jQuery.parseJSON(data);
+//	    	if (results[0].status == 'good'){
+//	    		alert("yes");
+//	    	}
+	});	
+	alert("fuck");
+
 	return flag;
 }
 
+/*
+function addComment () {
+	var commentUser = (document.getElementById('commentEmail').value).split('@')[0];
+	var comment = document.getElementById('commentPost').value;
+	
+	sendComment(commentUser, comment);
+}
 
+function sendComment(theUser, theComment) {
+	$.post(getCommentStatus, { status: "good" },
+		function(tempData) {
+			var result = $.parseJSON(tempData);
+			if(result[0].status == 'good') {
+				$("#blog-comments").val('');
+				
+				postComment(theUser, theComment);
+			}
+			else {
+				alert("Comment status not good");
+			}
+	});
+}
+
+function postComment(theUser, theComment) {
+	$("#blog-comments").append('<div class="comment"><div class="commentUser">'
+			+ theUser + '</div><div class="commentDate">'
+			+ new Date() + '</div><div class="commentPost">'
+			+ theComment + '</div></div>');
+}
+*/

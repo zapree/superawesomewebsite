@@ -1,5 +1,5 @@
 <?php
-	$DBH = new PDO("mysql:hsot=localhost;dbname=hw4", 'root', '');
+	$DBH = new PDO("mysql:host=localhost;dbname=hw4", 'root', '');
 ?>
 
 <html>

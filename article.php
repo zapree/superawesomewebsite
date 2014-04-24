@@ -1,6 +1,8 @@
 <?php
 	$DBH = new PDO("mysql:hsot=localhost;dbname=hw4", 'root', '');
-	$artTitle = $_GET['article'];//some DB pull
+	$artTitle = $_GET['article'];
+	$cleanTitle = filter_var($artTitle, FILTER_SANITIZE_STRING);
+	$cleanTitle = htmlentities($cleanTitle);
 	$title = str_replace('-', ' ',$artTitle);
 	$stmt = $DBH->prepare("SELECT * FROM blog WHERE title = :title");
 	$stmt->bindValue(':title', $title, PDO::PARAM_STR);
@@ -14,6 +16,10 @@
 	
 	include('header.php');
 ?>	
+<script>
+	var blog_id = <?php echo $article['id']; ?>;
+</script>
+
 <h3>
 	<?php echo $title ?>
 </h3>
@@ -27,23 +33,30 @@
 </div>
 <div id="blog-comments">
 	<h3>Comments</h3>
+	<?php 
+		$stmt = $DBH->prepare("SELECT * FROM blog_comment WHERE blog_id = :id");
+		$stmt->bindValue(':id', $article['id'], PDO::PARAM_STR);
+		$stmt->execute();
+		$comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach($comments as $comment) {
+			$user = split("@", $comment['email']);
+			echo '<div class="comment"><div class="commentUser">' . $user[0];
+			echo '</div><div class="commentDate">' . $comment['post_date'];
+			echo '</div><div class="commentPost">' . $comment['comment'] . '</div></div>';
+		}
+	?>	
 </div>
-<form action="" method="post">
+
+<form id="commentForm">
 	<fieldset>
-		<legend>Add comment to article</legend>
-		<table>
-			<tr>
-				<td>Email <input id="commentEmail" name="email box" type="email" /></td>
-				<tr>
-					<td>Comment</td>
-				</tr>
-				<td>
-				<textarea id="commentPost" name="Comment Box" rows="6" cols="40">Add Comment Here!</textarea>
-			</td>
-			<tr>
-				<td><button type="submit" class="button" onclick="addComment(); return false;">Add Comment</button></td>
-			</tr>
-		</table>
+		<legend>Add Comment to Article</legend>
+		<label for="email">Email</label>
+		<input name="email" type="email" id="email" /><br />
+		<label for="comment">Comment</label><br />
+		<textarea id="commentPost" name="comment" rows="6" cols="40"></textarea><br />
+		<input type="submit" class="button" value="Add Comment" onclick="return addCommentForm();"/>
 	</fieldset>
 </form>
+
 <?php include('footer.php'); ?>

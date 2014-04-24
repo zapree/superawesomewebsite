@@ -24,7 +24,7 @@
 						<td>State</td>
 						<td> </td>
 						<td>
-							<select name="state">
+							<select id="stateSelect" name="state">
 								<option value="CA">CA</option>
 								<option value="AZ">AZ</option>
 								<option value="AK">AK</option>
