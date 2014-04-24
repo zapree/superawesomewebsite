@@ -15,5 +15,7 @@
 		$stmt->execute();
 		
 	}
+	session_destroy();
+	
 ?>
 <?php include('footer.php'); ?>
