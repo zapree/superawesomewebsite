@@ -162,7 +162,6 @@ function validateForm() {
 	}
 	
 	if (!nameRegex.test(name.val())) {
-	   //alert('You have entered an invalid name.');
 	   
 	   console.log("text name invalid");
 	   name.parents('tr').css("background","#FF5050");
@@ -171,7 +170,6 @@ function validateForm() {
 	else name.parents('tr').css("background","none");
 
 	if (!addressRegex.test(address.val())) {
-	   //alert('You have entered an invalid address.');
 	   console.log("text address invalid");
 	   address.parents('tr').css("background","#FF5050");
 	   flag = false;
@@ -179,7 +177,6 @@ function validateForm() {
 	else address.parents('tr').css("background","none");
 	
 	if (!cityRegex.test(city.val())) {
-	  //alert('You have entered an invalid city.');
 	  console.log("text city invalid");
 	  city.parents('tr').css("background","#FF5050");
 	  flag = false;
@@ -187,7 +184,6 @@ function validateForm() {
 	else city.parents('tr').css("background","none");
 	
 	if (!emailRegex.test(email.val())) {
-	   //alert('You have entered an invalid email.');
 	   console.log("text email invalid");
 	   email.parents('tr').css("background","#FF5050");
 	   flag = false;
@@ -203,51 +199,15 @@ function validateForm() {
 	//}
 	//else phone.parents('tr').css("background","none");
 	
-	alert("no fucks");
 	if(!flag)alert('You have invalid entries.');
-alert("what the flux");
-/*	$.post('control/postorder.php',
+	$.post('control/postorder.php',
 		{theName:name, theAddress:address, theCity:city, theState:state, theEmail:email, thePhone:phone, theShipping:shipping},
-		function() {*/
-	$.post('control/postorder.php', {theName: name}, function() {
-			alert("no");
-//			results = jQuery.parseJSON(data);
-//	    	if (results[0].status == 'good'){
-//	    		alert("yes");
-//	    	}
+		function() {
+			results = jQuery.parseJSON(data);
+	    	if (results[0].status == 'good'){
+	    		console.log("Order posted");
+	    	}
 	});	
-	alert("fuck");
 
 	return flag;
 }
-
-/*
-function addComment () {
-	var commentUser = (document.getElementById('commentEmail').value).split('@')[0];
-	var comment = document.getElementById('commentPost').value;
-	
-	sendComment(commentUser, comment);
-}
-
-function sendComment(theUser, theComment) {
-	$.post(getCommentStatus, { status: "good" },
-		function(tempData) {
-			var result = $.parseJSON(tempData);
-			if(result[0].status == 'good') {
-				$("#blog-comments").val('');
-				
-				postComment(theUser, theComment);
-			}
-			else {
-				alert("Comment status not good");
-			}
-	});
-}
-
-function postComment(theUser, theComment) {
-	$("#blog-comments").append('<div class="comment"><div class="commentUser">'
-			+ theUser + '</div><div class="commentDate">'
-			+ new Date() + '</div><div class="commentPost">'
-			+ theComment + '</div></div>');
-}
-*/
