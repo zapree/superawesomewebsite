@@ -14,11 +14,24 @@
 		</form>
 
 		<script>
+			<?php 
+			
+				session_start(); 
+				if (!isset($_SESSION['cart'])) { 
+					$_SESSION['cart'] = array(0,0,0,0); 
+				}
+			
+				if(isset($_GET['product_type'])){
+					$_SESSION['cart'][$_GET['product_type']]+=$_GET['productquantity'];
+					
+				}
+			?>
+			
 			cart_products = {
-			yacht : new CartItem("Super Awesome Island Yacht", 1000000000.00, 0),
-			car : new CartItem("Super Awesome Car", 300000.00, 0),
-			tee : new CartItem("Super Awesome Tee", 20.00, 0),
-			penguin : new CartItem("Super Awesome Penguins", 400000.00, 0)
+			yacht : new CartItem("Super Awesome Island Yacht", 1000000000.00, <?php echo $_SESSION['cart'][0] ?>),
+			car : new CartItem("Super Awesome Car", 300000.00, <?php echo $_SESSION['cart'][1] ?>),
+			tee : new CartItem("Super Awesome Tee", 20.00, <?php echo $_SESSION['cart'][2] ?>),
+			penguin : new CartItem("Super Awesome Penguins", 400000.00, <?php echo $_SESSION['cart'][3] ?>)
 			};
 			
 			var the_cart = new Cart();
@@ -26,6 +39,8 @@
 				
 				the_cart.addcartitem(cart_products[product]);
 			}
+			the_cart.getcartinfo();
+			
 		
 			var table = $('#cart_table');
 			var header = $("<tr></tr>");
@@ -63,7 +78,6 @@
 				butt.attr({'type':'button','name':'javaSubmit','value':'Remove'});
 				butt.click(function() {
 					$(this).parent('tr').remove();
-					console.log($(this).parent('tr').find('td:first').text());
 					the_cart.removecartitem($(this).parent('tr').find('td:first').text());
 					$("#total").text("$"+the_cart.cart_total.toString().replace( /(\d)(?=(\d{3})+$)/g, "$1,"  )+".00");
 					$("#total").parent('tr').css("background", "none");
@@ -72,7 +86,6 @@
 				new_row.insertBefore($("#total_line"));
 				
 			}
-			console.log(table.find('hr'));
 			$("#header_row").css("border", "thin");
 			$("#header_row").css("border-bottom", "black");
 			//table.children('tr').css("padding", "10px 33px");
