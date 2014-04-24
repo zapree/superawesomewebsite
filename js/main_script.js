@@ -39,16 +39,10 @@
 		this.cart_total -= this.item_list[item].line_total;
 		//delete this.item_list[item];
 		var index = 0;
-		for(var key in this.item_list)
-		{
-		    if(this.item_list[key]==this.item_list[item]){
-		    	index++;
-		    	break;
-		    }
-		    
-		    index++;
-		}
-		alert(index);
+		if (item == "Super Awesome Island Yacht")index=0;
+		if (item == "Super Awesome Tee")index=1;
+		if (item == "Super Awesome Car")index=2;
+		if (item == "Super Awesome Penguins")index=3;
 		$.post('php/removefromcart.php', { item: index });
 		
 		
