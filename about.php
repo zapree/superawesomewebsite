@@ -1,22 +1,19 @@
 <?php $title = "About Super Awesome" ?>
 <?php include('header.php'); ?>
-		<h2>Our History</h2>
+		<h2>Our Products</h2>
 		<p>
-			The history of the Super Awesome Website is fairly simple, Eugene Balaguer and Parker Mathewson
-			decided one day in college that all they wanted to do was provide the most Super Awesome products
-			on this planet. Soon after, they found an architect and an aeronautical engineer from UCSB and a 
-			mechanical engineer named Matthew Hart to design the Super Awesome Island Yacht. This Yacht that
-			is spoken of is the prized item of the Super Awesome Website, which we build the site around.
+			The products we have chosen to bring you are used to bring joy into very rich and very awesome
+			people's lives. This is because we are greedy and want to claim as much money as we can while
+			we provide you the best items you will ever find. Ever. Do not doubt how much we love money.
 		</p>
-		<h3>What We Do</h3>
+		<h3>What Products</h3>
 		<p>
-			We only provide the most Super Awesome items in the whole world. Have you seen our products page?
-			There is not beating us! If you want anything, let us know, we can GET IT DONE.
+			The Super Awesome Items include the following: Super Awesome Penguins, a Super Awesome Tee Shirt,
+			a Super Awesome Car, and last but not least, our Super Awesome Island Yacht. This thing, is a FREAKING
+			ISLAND YACHT!!!! Billionaires will love our selection on items.
 		</p>
-		<h4>How to contact us</h4>
+		<h4>How to order</h4>
 		<p>
-			If you need to contact us, please feel free to email us at super@awesome.com, or call us at
-			(800) 797-2975. We also have a scanner and a fax...... HA yeah right, thats way too archaeic
-			for us.
+			Just click over to our products on our Super Awesome menu above!
 		</p>
 <?php include('footer.php'); ?>

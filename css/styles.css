@@ -1,258 +1,48 @@
-/* Authors: Parker Mathewson and Eugene Balaguer */
-#banner {
-	left: 12.5%;
-	top: 40px;
+* {
+    position: relative;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   
 }
 
-p {
-	line-height:2em;
-}
-
-ul a:link {
-	text-decoration: none;
-	color: #AB3C25;
-}
-
-ul a:hover {
-	text-decoration: underline;
-}
-
-ul a:visited {
-	color: #443AAB;
-}
-
-li {
-	float: left;
-	display: inline-block;
-	padding: 5px;
-	height: 30px;
-	width: 200px;
-}
-
-li ul .productdrop {
-	background-color: #AAA;
-	left: -999px;
-	position: relative;
-}
-
-li:hover ul .productdrop {
-	left: -40px;
-}
-
-header {
-	display: block;
+html,
+body {
+    height: 100%;
 }
 
 body {
-	background-color: rgba(0,0,0,0.05);
-	font-family: Georgia, Serif;
-	margin-left: auto;
-	margin-right: auto;
-	width: 960px;
-	display: block;
+    background: #f1f1f1;
+    color: #fff;
 }
 
-div {
-	display: block;
+.container {
+    position: relative;
+    margin-bottom: 2em;
+    height: 15em;
+    background: rgba(0,0,0,0.09);
+    font-family: Arial, sans-serif;
 }
 
-footer {
-	width: 100%;
-	background-color: #000;
+.container > h2 {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 9em;
+    opacity: 0.5;
+    cursor: default;
+    padding: 15px;
 }
-
-.foot {
-	color: white;
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.logo {
-	text-decoration: none;
-	color: black;
-}
-
-.front {
-	width: 960px;
-}
-
-.productHolder {
-	width: 95%;
-	margin-left:auto;
-	margin-right:auto;
-}
-
-.products {
-	display: inline-block;
-	width: 45%;
-	padding: 15px;
-	border: 1px solid black;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	
-}
-.product_table {
-	border-spacing: 20px;
-
-}
-.yacht_and_cart {
-	float:right;
-}
-
-#cart_table th, #cart_table td {
-	padding: 10px 33px;
-	
-}
-#blog_table {
-  border-collapse: collapse;
-  padding: 20px;
-}
-#blog_table tr { 
-  border: solid;
-  border-width: 1px 0;
-  
-}
-#blog_table tr:first-child{
-	border-top:none
-}
-#blog_table tr:last-child{
-	border-bottom: none;
-} 
-#product_yacht{
-	padding: 10px;
-	
-}
-#addtocart{
-	padding:5px;
-	
-}
-#addtocart fieldset{
-	background-color: #00B21C;
-	border-color: black;
-	border-width: 3px;
-}
-#addtocart fieldset legend{
-	border: solid 10px #000000;
-	background-color: #00B21C;
-	border-width: 3px;
-}
-
-
-
-#yacht {
-	width: 207px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#car {
-	width: 144px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#penguin {
-	width: 184px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#shirt {
-	width: 155px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#filler_row {
-	column-span:5;
-	height: 5px;
-	border-bottom: groove;
-}
-
-.button {
-	padding: 10px;
-	padding-bottom: 10px;
-	font-size: 100%;
-	background-color: #00B21C;
-}
-
-.altgreen {
-	border: 0;
-}
-
-.altgreen tr:nth-child(odd) {
-	border: none;
-	background: #35FF54;
-}
-
-.altgreen tr:nth-child(1) {
-	background: none;
-}
-
-.altgreen tr:last-child {
-	background: none;
-}
-
-.holder {
-	height: 21px;
-}
-
-#shipping {
-	width: 300px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
-#shippingbutton {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.shippingtable tr td{
-	width: 70px;
-}
-
-.shippingtable2 tr td{
-	width: 110px;
-}
-
-	
-.comment {
-	margin-left: 10px;
-}
-
-.commentDate {
-	color: gray;
-	font-style: italic;
-}
-
-.blogImage {
-	height: 150;
-	width: 200;
-}
-
-.articleImage {
-	display: inline-block;
-	float: right;
-}
-
-.productLink {
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wrapper {
-	height: 230px;
-}
-
 
 .nav-button {
     position: absolute;
-    top: 95px;
-    left: 49.5%;
+    top: 100%;
+    left: 50%;
     z-index: 11;
     margin-top: -2.25em;
     margin-left: -2.25em;
@@ -277,12 +67,12 @@ footer {
 
 .nav-wrapper {
     position: absolute;
-    top: -110px;
-    left: 36%;
+    top: 100%;
+    left: 50%;
     z-index: 10;
     margin-top: -13em;
     margin-left: -13.5em;
-    width: 43em;
+    width: 27em;
     height: 27em;
     border-radius: 50%;
     background: transparent;
@@ -485,14 +275,4 @@ footer {
     .button {
         font-size: 1em;
     }
-}
-
-* {
-    position: relative;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-   
 }
